@@ -10,7 +10,7 @@ model = pickle.load(open('model\model.pkl', 'rb'))
 
 @app.route('/')
 def form():
-    return render_template('form.html')
+    return render_template('index.html')
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -78,9 +78,9 @@ def predict():
     #print(output)
     
     if output == 0:
-        return render_template('form.html', prediction_text='you are tested negative for CKD ')
+        return render_template('index.html', prediction_text='you are tested negative for CKD ')
     else:
-        return render_template('form.html', prediction_text='you are tested positive for CKD ' )
+        return render_template('index.html', prediction_text='you are tested positive for CKD ' )
 
 
         

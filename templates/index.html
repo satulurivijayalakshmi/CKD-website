@@ -1,0 +1,203 @@
+<!-- This is GUI for Rainfall Prediction Application Using Machine Learning Classifer -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ML API</title>
+
+  <style>
+    /* CSS code for button */
+    body {
+      background-color:white;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 500px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+.bc{
+font-color:white;
+font-family: "Times New Roman", Times, serif;
+}
+.heading {
+  background-color: #A52265;
+  border: solid 1px #A52260;
+  height: 80px;
+}
+.about{
+  border: solid 1px #A52260;
+}
+.login{
+ border: solid 6px #A52260;
+}
+.logop {
+  width: 40%;
+  vertical-align: middle;
+  float: left;
+  height: 100%;
+}
+
+.myTitle {
+  display: flex;
+  color: white;
+  font-size: 20px;
+  font-style: italic;
+  padding-left: 3%;
+ padding-top:1%;
+  font-family: "Times New Roman", Times, serif;
+}
+input[type=number]{
+  width: 22%;
+  padding: 6px 10px;
+  margin: 6px 0;
+  box-sizing: border-box;
+}
+.option{
+  width: 22%;
+  padding: 6px 10px;
+  margin: 6px 0;
+  box-sizing: border-box;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Show Indian AI Hospital banner-->
+  
+   <header>
+    <article class="heading">
+      <h2 class="myTitle">CHRONIC KIDNEY DISEASE PREDICTION</h2>
+    </article>
+  </header>
+<div class="bc">
+<article class="about">
+<p></p>
+</article>
+</div>
+ <div class="login">
+	
+    <!-- Get input for predict the cancer -->
+    <center>
+    <form action= "/predict" method="POST">
+        <h3>Enter the values for predicting the disease</h3>
+        
+    	<input type="number" name="Age" id="Age" class="input" placeholder ="Age" min="2" max= "90" step="any"  required="required">
+        <input type="number" name="Blood Pressure" id="bp" class="input" placeholder="BloodPressure" min="50" max= "180" step="any"  required="required">
+		<input type="number" name="Specific Gravity" id="sg" class="input" placeholder="SpecificGravity"  max= "1.025" step="0.001" step="any"  required="required">		
+			<input type="number" name="Albumin" id="al" class="input" placeholder="Albumin" min="0.000" max= "5.000" step="any"  required="required">
+			
+		<br>
+    	<input type="number" name="Sugar" id="su" class="input" placeholder="Sugar" min="0.000" max= "5.000" step="any"  required="required">
+        
+			<select  class="option" name="rbc" id== "rbc">
+				<option value="">RedBloodCells</option>
+				<option value=0>normal</option>
+				<option value=1>abnormal</option>
+			</select>
+		
+		
+			<select class="option" name="pc" id=="pc">
+				<option value="">PusCell</option>
+				<option value=0>normal</option>
+                <option value=1>abnormal</option>
+			</select>
+		
+		
+			<select class="option" name="pcc" id=="pcc">
+				<option value="">PusCellClumps</option>
+				<option value=1>present</option>
+                <option value=0>notpresent</option>
+			</select>
+		<br>
+			<select class="option" name="bac" id=="bac">
+				<option value="">Bacteria</option>
+				<option value=1>present</option>
+                <option value=0>notpresent</option>
+			</select>
+
+		<input type="number" name="Blood Glucose Random" id="bgr" class="input" placeholder="BloodGlucoseRandom" min="22.000" max= "490.000" step="any"  required="required">
+		<input type="number" name="Blood Urea" id="bu" class="input" placeholder = "BloodUrea" min="1.500" max= "391.000" step="any"  required="required">
+        <input type="number" name="Serum Createinine" id="sc" class="input" placeholder = "SerumCreaiteinine" min="0.400" max= "76.000" step="any"  required="required"><br>
+		<input type="number" name="Sodium" id="so" class="input" placeholder="Sodium" step="any" min="4.500" max= "163.000"  required="required">
+		<input type="number" name="Potassium" id="po" class="input" placeholder="Potassium" min="2.500" max= "47.000" step="any"  required="required">
+		
+		<input type="number" name="Hemoglobin" id="hemo" class="input" placeholder="Hemoglobin" "3.100" max= "17.800" step="any"  required="required">
+		<input type="number" name="Packed Cell Volume" id="pcv" class="input" placeholder="PackedCellvolume" min="9.000" max= "54.000" step="any"  required="required"><br>
+		<input type="number" name="White Blood Cells Count" id="wbcc" class="input" placeholder="WhiteBloodCellsCount" min="2200.00" max= "26400.000" step="any"  required="required">
+		<input type="number" name="Red Blood Cells Count" id="rbcc" class="input" placeholder="RedBloodCellsCount" min="0.000" max= "8.000" step="any"  required="required">
+		<select class="option" name="hptn" id=="hptn" >
+			<option value="">Hypertension</option>
+			<option value=1>yes</option>
+            <option value=0>no</option>
+		</select>
+    	
+    	<select class="option" name="dm" id=="dm" >
+					<option value="">DiabetesMilletus</option>
+					<option value=1>yes</option>
+                    <option value=0>no</option>
+		</select>
+		<br>
+        <select class="option" name="cad" id=="cad" >
+					<option value="">CoronaryArteryDisease</option>
+					<option value=1>yes</option>
+                    <option value=0>no</option>
+				</select>
+		<select class="option" name="ap" id=="ap" >
+					<option value="">Appetite</option>
+					<option value=1>good</option>
+                    <option value=0>poor</option>
+				</select>
+    	<select class="option" name="pe" id=="pe" >
+					<option value="">PedalEdema</option>
+					<option value=1>yes</option>
+                    <option value=0>no</option>
+				</select>
+		<select class="option" name="ane" id=="ane" >
+					<option value="">Anemia</option>
+					<option value=1>yes</option>
+                    <option value=0>no</option>
+				</select>
+        <br>
+        
+        <!-- Show button -->
+        
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>PREDICT</strong></button></a>
+        
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h1>{{ prediction_text }}</h1>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>
