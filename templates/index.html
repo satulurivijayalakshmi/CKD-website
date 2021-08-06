@@ -1,4 +1,4 @@
-<!-- This is GUI for Rainfall Prediction Application Using Machine Learning Classifer -->
+<!-- This is GUI for chronic kidney disease prediction Application Using Machine Learning Classifer -->
 
 <!DOCTYPE html>
 <html >
@@ -41,21 +41,14 @@ font-family: "Times New Roman", Times, serif;
 }
 .heading {
   background-color: #A52265;
-  border: solid 1px #A52260;
-  height: 80px;
+  
+  height: 50px;
 }
 .about{
   border: solid 1px #A52260;
 }
-.login{
- border: solid 6px #A52260;
-}
-.logop {
-  width: 40%;
-  vertical-align: middle;
-  float: left;
-  height: 100%;
-}
+
+
 
 .myTitle {
   display: flex;
@@ -63,21 +56,181 @@ font-family: "Times New Roman", Times, serif;
   font-size: 20px;
   font-style: italic;
   padding-left: 3%;
- padding-top:1%;
+ padding-top:0%;
   font-family: "Times New Roman", Times, serif;
+  
 }
 input[type=number]{
-  width: 15%;
-  padding: 2px 2px;
+  width: 30%;
+  padding: 6px 10px;
   margin: 6px 0;
   box-sizing: border-box;
 }
 .option{
-  width: 15%;
-  padding: 2px 2px;
+  width: 30%;
+  padding: 6px 10px;
   margin: 6px 0;
   box-sizing: border-box;
+  
 }
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-content: flex-end;
+  }
+  .item {
+    box-sizing: border-box;
+    flex: 300px;
+    margin: 0.5em;
+    padding: 0.5em;
+    border: 1px solid #000;
+    border-radius: 5px;
+  }
+  
+
+  
+  /*ipad*/
+  
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (-webkit-min-device-pixel-ratio: 2) 
+{
+  .wrapper{
+  max-width: 900px;
+  width: 100%;
+  
+  }
+  .wrapper .form .item{
+  flex:200px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction:row;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 3px;
+  border: 1px solid #000;
+  
+}
+  .wrapper .form .item .input{
+    width: 40%;
+  padding: 6px 10px;
+  margin: 6px 0;
+  }
+  .wrapper .form .item .option{
+    width: 40%;
+  padding: 6px 10px;
+  margin: 6px 0;
+ 
+  }
+}*/
+
+/*ipad pro*/
+/* 
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .wrapper{
+  max-width: 900px;
+  width: 100%;
+  align-items: center;
+  }
+  .wrapper .form .item{
+  flex:200px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction:row;
+  border-radius: 2px;
+  box-sizing: border-box;
+  
+  margin: 0.5em;
+  padding: 0.5em;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+  .wrapper .form{
+  width: 100%;
+  align-items: center;
+}
+
+  .wrapper .form .item label{
+  
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+  .wrapper .form .item .input{
+  width:30%;
+  padding: 6px 10px;
+  margin: 6px 0;
+  box-sizing: border-box;
+  }
+  .wrapper .form .item .option{
+  padding: 6px 10px;
+  width: 30%;
+  padding: 6px 10px;
+  margin: 6px 0;
+  box-sizing: border-box;
+ 
+  }
+  .wrapper .form .item.terms{
+    flex-direction: row;
+  }
+}*/
+/*iphonex*/
+/*
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+  .wrapper .form .item .input{
+  width:30%;
+  padding: 6px 10px;
+  margin: 6px 0;
+  box-sizing: border-box;
+  box-sizing: border-box;
+    flex: 100px;
+    margin: 0.5px;
+  padding: 0.5px;
+  display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #000;
+    border-radius: 2px;
+   
+  }
+
+  
+  .wrapper .form .item .option{
+  
+  width: 30%;
+  padding: 6px 10px;
+  margin: 6px 0;
+  box-sizing: border-box;
+  box-sizing: border-box;
+    flex: 100px;
+    margin: 0.5px;
+    padding: 0.5px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #000;
+    border-radius: 2px;
+  }
+ 
+
+  
+ 
+  
+    
+
+  }
+*/
+
+
 
   </style>
 
@@ -89,121 +242,201 @@ input[type=number]{
   
    <header>
     <article class="heading">
-      <h2 class="myTitle">CHRONIC KIDNEY DISEASE PREDICTION</h2>
+      <h1 class="myTitle">CHRONIC KIDNEY DISEASE PREDICTION</h1>
     </article>
   </header>
-<div class="bc">
-<article class="about">
-<p></p>
-</article>
+<div class="bc"></div>
+
+  <div>
+    <center>
+<h1>{{ prediction_text }}</h1>
+    </center>
+
+
 </div>
  <div class="login">
-	
+   <div class="wrapper">
+  
     <!-- Get input for predict the cancer -->
     <center>
-    <form action= "/predict" method="POST">
-        <h3>Enter the values for predicting the disease</h3>
-		<br>
-		<br>
-        
-    	<input type="number" name="Age" id="Age" class="input" placeholder ="Age" min="2" max= "90" step="any"  required="required">&nbsp &nbsp
-        <input type="number" name="Blood Pressure" id="bp" class="input" placeholder="BloodPressure" min="50" max= "180" step="any"  required="required">&nbsp &nbsp
-		<input type="number" name="Specific Gravity" id="sg" class="input" placeholder="SpecificGravity"  max= "1.025" step="0.001" step="any"  required="required">&nbsp &nbsp		
-			<input type="number" name="Albumin" id="al" class="input" placeholder="Albumin" min="0.000" max= "5.000" step="any"  required="required">
-		<br>	
-		<br>
-    	<input type="number" name="Sugar" id="su" class="input" placeholder="Sugar" min="0.000" max= "5.000" step="any"  required="required">&nbsp &nbsp
-        
-			<select  class="option" name="rbc" id== "rbc">
-				<option value="">RedBloodCells</option>
-				<option value=0>normal</option>
-				<option value=1>abnormal</option>
-			</select>&nbsp &nbsp
-		
-		
-			<select class="option" name="pc" id=="pc">
-				<option value="">PusCell</option>
-				<option value=0>normal</option>
-                <option value=1>abnormal</option>
-			</select>&nbsp &nbsp
-		
-		
-			<select class="option" name="pcc" id=="pcc">
-				<option value="">PusCellClumps</option>
-				<option value=1>present</option>
-                <option value=0>notpresent</option>
-			</select>
-		<br>
-		<br>
-			<select class="option" name="bac" id=="bac">
-				<option value="">Bacteria</option>
-				<option value=1>present</option>
-                <option value=0>notpresent</option>
-			</select>&nbsp &nbsp
-
-		<input type="number" name="Blood Glucose Random" id="bgr" class="input" placeholder="BloodGlucoseRandom" min="22.000" max= "490.000" step="any"  required="required">&nbsp &nbsp
-		<input type="number" name="Blood Urea" id="bu" class="input" placeholder = "BloodUrea" min="1.500" max= "391.000" step="any"  required="required">&nbsp &nbsp
-        <input type="number" name="Serum Createinine" id="sc" class="input" placeholder = "SerumCreaiteinine" min="0.400" max= "76.000" step="any"  required="required"><br><br>
-		<input type="number" name="Sodium" id="so" class="input" placeholder="Sodium" step="any" min="4.500" max= "163.000"  required="required">&nbsp &nbsp
-		<input type="number" name="Potassium" id="po" class="input" placeholder="Potassium" min="2.500" max= "47.000" step="any"  required="required">&nbsp &nbsp
-		
-		<input type="number" name="Hemoglobin" id="hemo" class="input" placeholder="Hemoglobin" "3.100" max= "17.800" step="any"  required="required">&nbsp &nbsp
-		<input type="number" name="Packed Cell Volume" id="pcv" class="input" placeholder="PackedCellvolume" min="9.000" max= "54.000" step="any"  required="required"><br><br> 
-		<input type="number" name="White Blood Cells Count" id="wbcc" class="input" placeholder="WhiteBloodCellsCount" min="2200.00" max= "26400.000" step="any"  required="required">&nbsp &nbsp
-		<input type="number" name="Red Blood Cells Count" id="rbcc" class="input" placeholder="RedBloodCellsCount" min="0.000" max= "8.000" step="any"  required="required">&nbsp &nbsp
-		<select class="option" name="hptn" id=="hptn" >
-			<option value="">Hypertension</option>
-			<option value=1>yes</option>
-            <option value=0>no</option>
-		</select>&nbsp &nbsp
-    	
-    	<select class="option" name="dm" id=="dm" >
-					<option value="">DiabetesMilletus</option>
-					<option value=1>yes</option>
-                    <option value=0>no</option>
-		</select>
-		<br> 
-		<br>
-        <select class="option" name="cad" id=="cad" >
-					<option value="">CoronaryArteryDisease</option>
-					<option value=1>yes</option>
-                    <option value=0>no</option>
-				</select>&nbsp &nbsp 
-		<select class="option" name="ap" id=="ap" >
-					<option value="">Appetite</option>
-					<option value=1>good</option>
-                    <option value=0>poor</option>
-				</select>&nbsp &nbsp
-    	<select class="option" name="pe" id=="pe" >
-					<option value="">PedalEdema</option>
-					<option value=1>yes</option>
-                    <option value=0>no</option>
-				</select>&nbsp &nbsp
-		<select class="option" name="ane" id=="ane" >
-					<option value="">Anemia</option>
-					<option value=1>yes</option>
-                    <option value=0>no</option>
-				</select> 
+      <form action= "/predict" method="POST">
+        <div class="form">
+          <b>Enter the values for predicting the disease</b>
+          <div class="flex-container">
+        <div class="item">
+          <label> Age: </label><br>
+        <input type="number" name="Age" id="Age" class="input"  min="2" max= "90" step="any"  required="required">
+        </div>
+        <div class="item">
+          <label>Blood Pressure: </label><br>
+          <input type="number" name="Blood Pressure" id="bp" class="input" min="50" max= "180" step="any"  required="required">
+        </div>
+        <div class="item">
+          <label>Specific Gravity: </label><br>
+        <input type="number" name="Specific Gravity" id="sg" class="input" max= "1.025" step="0.001" step="any"  required="required">		
+        </div>
         <br>
-		<br>
-		<br>
+        <div class="item">
+          <label>Albumin:</label><br>
+        <input type="number" name="Albumin" id="al" class="input"  min="0.000" max= "5.000" step="any"  required="required">
+        </div>
+        </br>
+     
+        <div class="item">
+          <label>Sugar:</label><br>
+        <input type="number" name="Sugar" id="su" class="input"  min="0.000" max= "5.000" step="any"  required="required">
+        </div>
         
-        <!-- Show button -->
+        <div class="item">
+          <label>Red Blood Cells:</label><br> 
+        <select class="option" name="rbc" id= "rbc" required>
+          <option value=0>normal</option>
+          <option value=1>abnormal</option>
+        </select>
+        </div>
+        <div class="item">
+        <label> Pus Cell:</label><br>
+        <select class="option" name="pc" id="pc">
+          
+          <option value=0>normal</option>
+                  <option value=1>abnormal</option>
+        </select>
+        </div>
+        <br>
+        <div class="item">
+        <label> Pus Cell Clumps:</label><br>
+        <select class="option" name="pcc" id=="pcc">
+          <option value=1>present</option>
+          <option value=0>notpresent</option>
+        </select>
+       </div>
+       <div class="item">
+        <label> Bacteria:</label><br>
+        <select class="option" name="bac" id="bac">
+          <option value=1>present</option>
+          <option value=0>notpresent</option>
+        </select>
+        </div>
+        <div class="item">
+          <label>BloodGlucoseRandom:</label><br>
+      <input type="number" name="Blood Glucose Random" id="bgr" class="input"  min="22.000" max= "490.000" step="any"  required="required">
+      </div>
+      <div class="item">
+        <label>Blood Urea:</label><br>
+      <input type="number" name="Blood Urea" id="bu" class="input"  min="1.500" max= "391.000" step="any"  required="required">
+      </div>
+      <br>
+      <div class="item">
+        <label>Serum Creaiteinine:</label><br>
+          <input type="number" name="Serum Createinine" id="sc" class="input"  min="0.400" max= "76.000" step="any"  required="required">
+     </div>
+      <div class="item">
+        <label>Sodium:</label><br>
+          <input type="number" name="Sodium" id="so" class="input"  step="any" min="4.500" max= "163.000"  required="required">&nbsp &nbsp
+      </div>
+      <div class="item">
+        <label>Potassium:</label><br>
+          <input type="number" name="Potassium" id="po" class="input"  min="2.500" max= "47.000" step="any"  required="required">&nbsp &nbsp
+      </div>
+      <div class="item">
+        <label>Hemoglobin:</label><br>
+      <input type="number" name="Hemoglobin" id="hemo" class="input" min= "3.100" max= "17.800" step="any"  required="required">&nbsp &nbsp
+      </div>
+      <br>
+      <div class="item">
+        <label>Packed Cell volume:</label><br>
+      <input type="number" name="Packed Cell Volume" id="pcv" class="input"  min="9.000" max= "54.000" step="any"  required="required">
+      </div>
+      <div class="item">
+        <label>WhiteBloodCellsCount:</label><br>
+      <input type="number" name="White Blood Cells Count" id="wbcc" class="input"  min="2200.00" max= "26400.000" step="any"  required="required">&nbsp &nbsp
+      </div>
+      <div class="item">
+        <label>RedBloodCellsCount:</label><br>
+      <input type="number" name="Red Blood Cells Count" id="rbcc" class="input"  min="0.000" max= "8.000" step="any"  required="required">&nbsp &nbsp
+      </div>
+      <div class="item">
+      <label> Hypertension:</label><br>
+      <select class="option" name="hptn" id="hptn" >
         
-            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>PREDICT</strong></button></a>
-        
-        
-    </form>
+        <option value=1>yes</option>
+              <option value=0>no</option>
+      </select>&nbsp &nbsp
+      </div>
+      <br>
+      <div class="item">	
+      <label> Diabetes Milletus:</label><br>
+        <select class="option" name="dm" id=="dm" >
+            
+            <option value=1>yes</option>
+                      <option value=0>no</option>
+      </select>
+      </div>
+      <div class="item">
+      <label> CoronaryArteryDisease:</label><br>
+          <select class="option" name="cad" id="cad" >
+            
+            <option value=1>yes</option>
+            <option value=0>no</option>
+          </select>&nbsp &nbsp 
+      </div>
+      <div class="item">
+      <label> Appetite:</label><br>
+      <select class="option" name="ap" id=="ap" >
+            
+            <option value=1>good</option>
+            <option value=0>poor</option>
+          </select>&nbsp &nbsp
+      </div>
+      <div class="item">
+      <label> Pedal Edema:</label><br>
+        <select class="option" name="pe" id=="pe" >
+            
+            <option value=1>yes</option>
+                      <option value=0>no</option>
+          </select>&nbsp &nbsp
+      </div>
+      <br>
+      <div class="item">	
+      <label> Anemia:</label><br>
+      <select class="option" name="ane" id=="ane" >
+            
+            <option value=1>yes</option>
+                      <option value=0>no</option>
+          </select> 
+      </div>
+      
+      </div>
+          
+          <!-- Show button -->
+          
+              <button type="submit" class="btn btn-primary btn-block btn-large"><strong>PREDICT</strong></button></a>
+          
+          
+      </form>
     </center>
    
    <!-- Show predicted output using ML model --> 
-   <div>
-       <center>
-   <h1>{{ prediction_text }}</h1>
-       </center>
-   </div>
-
+  
+  </div>
  </div>
 
 </body>
+</html>
+<html>
+  <style>
+    .title{
+      background-color: white;
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="title">
+    <h3>CHRONIC KIDNEY DISEASE PREDICTION</h3>
+    <b>CHRONIC KIDNEY DISEASE PREDICTION</b>
+    <b>CHRONIC KIDNEY DISEASE PREDICTION</b>
+    
+
+    </div>
+  </body>
 </html>
